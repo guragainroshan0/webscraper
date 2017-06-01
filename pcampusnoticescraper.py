@@ -1,14 +1,11 @@
 import bs4 as bs
 import wget
 import os
-from bs4 import BeautifulSoup as b
 import urllib.request
 
 all_notice_links = []
 all_notice_name= []
 all_files_download_links = []
-image = []
-pdf = []
 sauce = urllib.request.urlopen("https://www.pcampus.edu.np").read()
 soup = bs.BeautifulSoup(sauce,'lxml')
 for side_links in soup.find_all("aside"):
@@ -32,7 +29,7 @@ for p in all_notice_links:
                 for notice_download in download:
                      all_files_download_links.append(notice_download.get("href"))
 
-dow = zip(all_notice_name,all_files_download_links)
+#dow = zip(all_notice_name,all_files_download_links)
 try:
         os.mkdir("pythonScrapednotice")
 except:

@@ -29,7 +29,7 @@ for p in all_notice_links:
                 for notice_download in download:
                      all_files_download_links.append(notice_download.get("href"))
 
-#dow = zip(all_notice_name,all_files_download_links)
+dow = zip(all_notice_name,all_files_download_links)
 try:
         os.mkdir("pythonScrapednotice")
 except:
